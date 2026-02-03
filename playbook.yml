@@ -1,0 +1,32 @@
+---
+- name: Setting up the LAMP STACK
+  hosts: node
+  vars_files:
+     package_svc.yml
+  tasks:
+    - yum:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ pkg }}"
+
+    - systemd:
+         name: "{{ item }}"
+         state: started
+         enabled: true
+      loop: "{{ svc }}"
+
+    - template:
+        src: ./php.js
+        dest: /var/www/html/info.php
+
+    - template:
+        src: ./script.sh
+        dest: /root/script.sh
+
+    - shell: "chmod a+x /root/script.sh"
+
+    - shell: "bash /root/script.sh"
+
+    - raw: "systemctl restart httpd; systemctl restart php-fpm"
+
+...

@@ -1,0 +1,15 @@
+pkg:
+  - httpd
+  - mariadb1011
+  - mariadb1011-server
+  - php
+  - php-mysqlnd
+  - php-gd
+  - php-curl
+  - php-ftp
+  - php-fpm
+
+svc:
+  - httpd
+  - mariadb
+  - php-fpm
