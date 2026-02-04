@@ -21,7 +21,7 @@ private_key_file = /root/second_exam.pem
 [privilege_escalation]
 become = true
 become_ask_pass = false
-become_method = sudo" >>/etc/ansible/asnible.cfg
+become_method = sudo" >>/etc/ansible/ansible.cfg
 ```
 
 Execute below command to run the playbook 
