@@ -41,3 +41,5 @@ http://13.232.77.51/info.php
 ![output](images/html.png)
 
 ![phpinfo](images/infophp.png)
+
+Database is accessible with username root and password root@123
